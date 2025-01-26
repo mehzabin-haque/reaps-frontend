@@ -1,5 +1,5 @@
-// src/app/signup/page.tsx
-'use client'
+// app/signup/page.tsx
+'use client';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
@@ -13,36 +13,30 @@ export default function SignUpPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     try {
-      // Check if email already exists
-      const existingUsers = JSON.parse(localStorage.getItem('users') || '[]');
-      const emailExists = existingUsers.some(u => u.email === email);
-      
-      if (emailExists) {
-        setError('Email already exists');
+      const response = await fetch('/api/auth/signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ username, email, password, userType })
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        setError(data.message || 'Error creating account. Please try again.');
         return;
       }
 
-      const newUser = {
-        id: Date.now().toString(),
-        username,
-        email,
-        password,
-        role: userType,
-        createdAt: new Date().toISOString()
-      };
-
-      // Add new user to localStorage
-      const updatedUsers = [...existingUsers, newUser];
-      localStorage.setItem('users', JSON.stringify(updatedUsers));
-      
       // Clear error
       setError('');
 
       // Redirect to login page
       router.push('/login');
     } catch (error) {
+      console.error('Signup Frontend Error:', error);
       setError('Error creating account. Please try again.');
     }
   };
@@ -116,8 +110,10 @@ export default function SignUpPage() {
         </div>
 
         <div className="flex-1 bg-blue-100 text-center hidden lg:flex">
-          <div className="m-12 xl:m-16 w-full bg-contain bg-center bg-no-repeat" 
-               style={{ backgroundImage: 'url("/logo2.jpg")' }} />
+          <div
+            className="m-12 xl:m-16 w-full bg-contain bg-center bg-no-repeat"
+            style={{ backgroundImage: 'url("/logo2.jpg")' }}
+          />
         </div>
       </div>
     </div>

@@ -46,19 +46,8 @@ export default function InteractiveDashboard() {
   const colors = ["#667eea", "#818cf8", "#9333ea", "#a855f4", "#ec4899"];
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-8">
-      <h1 className="text-2xl font-bold mb-8">Interactive Dashboard</h1>
-
-      {/* Top filters */}
-      <div className="flex items-center justify-between mb-8">
-        <div className="flex items-center space-x-4">
-          <button className="flex items-center space-x-2 px-4 py-2 rounded-lg bg-white border border-gray-200 hover:bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
-            <FilmIcon className="h-4 w-4" />
-            <span className="text-sm">Filter</span>
-          </button>
-        </div>
-      </div>
-
+    <div className="flex flex-col py-8">
+      
       {/* Dashboard sections */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Analysis by Country (Bar Chart) */}
