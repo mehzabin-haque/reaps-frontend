@@ -3,7 +3,8 @@
 'use client';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { useUser } from '../../components/context/UserContext';
+import useUser from '@/hooks/useUser';
+// import { useUser } from '../../components/context/UserContext';
 
 
 export default function LoginPage() {
@@ -11,7 +12,7 @@ export default function LoginPage() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [credentials, setCredentials] = useState({ username: '', password: '' });
-  const { login, user } = useUser();
+  const { user, updateUser } = useUser();
   const router = useRouter();
   
 
@@ -35,13 +36,15 @@ export default function LoginPage() {
       }
 
       // Store JWT token securely (consider using HttpOnly cookies for better security)
-      localStorage.setItem('token', data.token);
-      localStorage.setItem('currentUser', JSON.stringify(data.user));
+      // localStorage.setItem('token', data.token);
+      // localStorage.setItem('currentUser', JSON.stringify(data.user));
+      console.log(data);
+      updateUser(data.user);
 
       setError('');
 
       // Redirect based on role
-      if (data.user.role === 'policy_maker') {
+      if (data.user.role === 'policymaker') {
         router.push('/policymaker');
       } else {
         router.push('/researcher');

@@ -1,16 +1,16 @@
-'use client';
-
+// app/page.tsx
 import Sidebar from "@/components/Sidebar";
 import Interactive from "./interactive/page";
-import useUser from "@/hooks/useUser";
 
 export default function Dashboard() {
-  const { user, updateUser } = useUser();
   return (
     <div className="flex min-h-screen">
-    
-      <div className="flex py-4">
-        
+      {/* Sidebar */}
+      
+
+      {/* Main Content */}
+      <div className="flex">
+        <h1 className="text-3xl font-bold mb-4">Welcome, [Name]!</h1>
         <Interactive />
       </div>
     </div>

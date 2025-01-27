@@ -5,11 +5,13 @@ import { CloudArrowUpIcon, DocumentTextIcon } from "@heroicons/react/24/outline"
 import { useDropzone } from "react-dropzone";
 import axios from "axios";
 import { cn } from "../../../lib/utils/classname";
+import useUser from "@/hooks/useUser";
 
 export default function UploadDocument() {
   const [isDragging, setIsDragging] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [isUploading, setIsUploading] = useState(false);
+  const { user, updateUser } = useUser();
 
   const onDrop = useCallback((acceptedFiles: File[]) => {
     const file = acceptedFiles[0];
@@ -60,7 +62,7 @@ export default function UploadDocument() {
     <div className="max-w-2xl mx-auto px-4 py-8 ">
       <h2 className="text-2xl font-bold mb-8">Upload Policy Document</h2>
       <div className="flex space-x-32 justify-center items-center h-[70vh] ">
-      <div className="w-1/2">
+      <div className="min-w">
        
        {/* Drag and Drop zone */}
        <div
@@ -113,7 +115,7 @@ export default function UploadDocument() {
       </div>
  
        {/* File details form */}
-       <div className="mt-12 space-y-4 w-1/2 flex flex-col">
+       {/* <div className="mt-12 space-y-4 w-1/2 flex flex-col">
          <div className="space-y-4">
            <div>
              <label htmlFor="title" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
@@ -168,7 +170,7 @@ export default function UploadDocument() {
          >
            {isUploading ? "Uploading..." : "Upload Document"}
          </button>
-       </div>
+       </div> */}
       </div>
     </div>
   );

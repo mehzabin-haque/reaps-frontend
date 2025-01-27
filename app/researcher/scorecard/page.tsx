@@ -12,7 +12,6 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import { cn } from "../../../lib/utils/classname";
-import useUser from "@/hooks/useUser";
 
 // Sample data for historical trends
 const historicalData = [
@@ -31,7 +30,6 @@ const categories = [
 ];
 
 export default function AIScorecard() {
-  const { user, updateUser } = useUser();
   return (
     <div className="max-w-6xl mx-auto px-4 py-8">
       <h1 className="text-2xl font-bold mb-8">AI Readiness Scorecard</h1>

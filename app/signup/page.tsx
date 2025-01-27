@@ -83,7 +83,7 @@ export default function SignUpPage() {
                 required
               >
                 <option value="researcher">Researcher</option>
-                <option value="policy_maker">Policy Maker</option>
+                <option value="policymaker">Policy Maker</option>
               </select>
             </div>
 

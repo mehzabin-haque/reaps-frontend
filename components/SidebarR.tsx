@@ -15,25 +15,23 @@ import {
 import useUser from "@/hooks/useUser";
 
 const navigation = [
-  { name: "Dashboard Home", href: "/policymaker", icon: DocumentTextIcon },
-  { name: "Upload Policy Document", href: "/policymaker/upload", icon: CloudArrowUpIcon },
-  { name: "Analysis Reports", href: "/policymaker/reports", icon: AcademicCapIcon },
-  { name: "Notifications", href: "/policymaker/notification", icon: BellIcon },
-  { name: "Customization Settings", href: "/policymaker/settings", icon: Cog8ToothIcon },
-  { name: "AI Readiness Scorecard", href: "/policymaker/scorecard", icon: ArrowPathIcon },
+  { name: "Dashboard Home", href: "/researcher", icon: DocumentTextIcon },
+  { name: "Notifications", href: "/researcher/notification", icon: BellIcon },
+  { name: "AI Readiness Scorecard", href: "/researcher/scorecard", icon: ArrowPathIcon },
   
 ];
 
-export default function Sidebar() {
+
+export default function SidebarResearcher() {
   const pathname = usePathname();
   const router = useRouter();
   const { user, updateUser } = useUser();
+  
   const handleLogout = () => {
     // handle logout
     updateUser(null);
     router.push('/login');
   }
-
   return (
     <aside className="w-64 bg-white border-r border-gray-200 h-screen flex flex-col">
       {/* Navigation */}
@@ -46,7 +44,7 @@ export default function Sidebar() {
                 <Link
                   href={item.href}
                   className={cn(
-                    "flex items-center rounded-md px-4 py-6 text-sm font-medium",
+                    "flex items-center rounded-md px-4 py-10  text-sm font-medium",
                     isActive
                       ? "text-blue-600 bg-blue-50 dark:bg-blue-500 dark:text-white"
                       : "text-gray-700 hover:bg-blue-50 dark:text-gray-200 dark:hover:bg-blue-500"

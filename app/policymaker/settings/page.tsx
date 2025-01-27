@@ -1,4 +1,5 @@
 'use client'
+import useUser from '@/hooks/useUser';
 import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -18,6 +19,8 @@ export default function CustomizationSettings() {
     governance: true,
     innovation: true,
   });
+
+  const { user, updateUser } = useUser();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

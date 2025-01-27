@@ -1,10 +1,18 @@
 [
   {
     "id": "1737872352595",
-    "username": "mehu",
+    "username": "mehu-p",
     "email": "m@m.com",
     "password": "$2a$10$fKwXAXkXujd2O3iaEk0GJenHb/dl5PROgy9pxPv19CNamaoeGncdu",
-    "role": "policy_maker",
+    "role": "policymaker",
     "createdAt": "2025-01-26T06:19:12.595Z"
+  },
+  {
+    "id": "1737895092779",
+    "username": "mehu-r",
+    "email": "a@gmail.com",
+    "password": "$2a$10$szohkfu13khU88rXKD/gqOZ4luoP8iM3Drni9ON7OoBE6mYMucpLK",
+    "role": "researcher",
+    "createdAt": "2025-01-26T12:38:12.779Z"
   }
 ]
