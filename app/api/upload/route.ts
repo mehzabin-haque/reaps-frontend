@@ -6,6 +6,7 @@ import { spawn } from "child_process";
 
 export const runtime = "nodejs";
 
+// Disable the built-in bodyParser so we can handle the raw stream ourselves
 export const config = {
   api: {
     bodyParser: false,
@@ -14,13 +15,15 @@ export const config = {
 
 export async function POST(request: Request) {
   try {
-    // 1. Prepare a Node.js readable stream from the incoming Request
+    // 1. Convert the incoming Request into a readable stream for Busboy
     const { Readable } = require("stream");
     const reqStream = new Readable({
-      read() { /* We'll push the data later */ },
+      read() {
+        // We'll push the request body once below
+      },
     });
 
-    // 2. Read the entire request body into a buffer
+    // 2. Read the entire request body into a Buffer
     const arrayBuffer = await request.arrayBuffer();
     const buffer = Buffer.from(arrayBuffer);
 
@@ -43,11 +46,9 @@ export async function POST(request: Request) {
     let originalFilename = "";
     let fileBuffer: Buffer | null = null;
 
-    // 5. Listen for the "file" event
-    //    Note: the 3rd argument is "info" in Busboy >= v1
+    // 5. Listen for the "file" event to get the uploaded file
     busboy.on("file", (fieldname, fileStream, info) => {
       const { filename, encoding, mimeType } = info;
-      // Now "filename" is a string (or undefined), not an object
       originalFilename = filename || "uploadedFile";
 
       const chunks: Buffer[] = [];
@@ -59,40 +60,39 @@ export async function POST(request: Request) {
       });
     });
 
-    // 6. Listen for normal fields (e.g. userId)
+    // 6. Listen for normal fields (e.g., userId)
     busboy.on("field", (fieldname: string, val: string) => {
       if (fieldname === "userId") {
         userId = val;
       }
     });
 
-    // 7. Wrap Busboy's finish event
+    // 7. Wrap Busboy's finish event in a Promise
     const busboyFinished = new Promise<void>((resolve, reject) => {
       busboy.on("finish", () => resolve());
       busboy.on("error", (err) => reject(err));
     });
 
-    // 8. Pipe data into Busboy
+    // 8. Push the request body data to Busboy, then end
     reqStream.push(buffer);
     reqStream.push(null);
     reqStream.pipe(busboy);
 
-    // 9. Wait for Busboy to finish
+    // 9. Wait for Busboy to finish parsing
     await busboyFinished;
 
-    // 10. If no file was parsed
     if (!fileBuffer) {
       return NextResponse.json({ error: "No file uploaded" }, { status: 400 });
     }
 
-    // 11. Write file to disk in public/input_{userId}
+    // 10. Save the uploaded PDF into public/input_{userId}
     const inputDir = path.join(process.cwd(), "public", `input_${userId}`);
     await fs.mkdir(inputDir, { recursive: true });
 
     const finalInputPath = path.join(inputDir, originalFilename);
     await fs.writeFile(finalInputPath, fileBuffer);
 
-    // 12. Spawn the Python script
+    // 11. Construct paths for the "country_specific_policy.py" script
     const scriptPath = "C:/Users/ASUS/Desktop/REAPS/Policies/country_specific_policy.py";
     const outputDir = path.join(process.cwd(), "public", `output_${userId}`);
     await fs.mkdir(outputDir, { recursive: true });
@@ -102,21 +102,33 @@ export async function POST(request: Request) {
     const outputFileName = `analysis_report_${baseName}.pdf`;
     const finalOutputPath = path.join(outputDir, outputFileName);
 
+    // 12. Run the first Python script to generate analysis
     await runPythonScript(scriptPath, [finalInputPath, finalOutputPath]);
 
+    // 13. Now run the **semantic analysis** script, passing userId
+    //     so it only scans validation/, input_{userId}, output_{userId}.
+    //     Provide a full path to your new "semantic_analysis.py".
+    const semanticAnalysisScript = "C:/Users/ASUS/Desktop/REAPS/Policies/semantic_analysis.py";
+    await runPythonScript(semanticAnalysisScript, [userId]);
+
+    // 14. Return success
     return NextResponse.json({
-      message: "File uploaded & processed successfully",
+      message: "File uploaded & processed successfully, semantic analysis updated",
       inputFile: `/input_${userId}/${originalFilename}`,
       outputFile: `/output_${userId}/${outputFileName}`,
+      matrix: "/semantic_similarity_matrix.csv", // optionally show path to the matrix
     });
   } catch (err: any) {
     console.error("Upload Error => ", err);
-    return NextResponse.json({ error: err.message || "Something went wrong" }, { status: 500 });
+    return NextResponse.json(
+      { error: err.message || "Something went wrong" },
+      { status: 500 }
+    );
   }
 }
 
 /**
- * Run the Python script with arguments. 
+ * Helper function to run a Python script with arguments. 
  * Returns a Promise that resolves when the script finishes or rejects on error.
  */
 function runPythonScript(scriptPath: string, args: string[]): Promise<void> {
@@ -143,4 +155,3 @@ function runPythonScript(scriptPath: string, args: string[]): Promise<void> {
     });
   });
 }
-

@@ -74,8 +74,9 @@ export default function UploadDocument() {
   };
 
   return (
-    <div className="max-w-2xl mx-auto px-4 py-8">
-      <h2 className="text-2xl font-bold mb-4">Upload Policy Document</h2>
+    <div className="mx-auto py-36">
+      <div className="max-w-2xl mx-auto px-4 py-8">
+      <h2 className="text-2xl font-bold mb-4 py-6 justify-center flex">Upload Policy Document</h2>
       
       <div {...getRootProps()} 
            className={cn(
@@ -100,13 +101,16 @@ export default function UploadDocument() {
         </div>
       )}
 
+      <div className="flex justify-center">
       <button
-        className="mt-6 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors"
+        className="mt-6 bg-blue-500  text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors"
         onClick={handleSubmit}
         disabled={isUploading || !selectedFile}
       >
         {isUploading ? "Uploading..." : "Submit Document"}
       </button>
+      </div>
+    </div>
     </div>
   );
 }

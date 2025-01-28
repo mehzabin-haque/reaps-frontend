@@ -1,0 +1,1319 @@
+[
+    {
+      "Country": "Afghanistan",
+      "Government": 16.92,
+      "Technology": 8.27,
+      "Sector": 22.46,
+      "Data_and_Infrastructure": 20.05
+    },
+    {
+      "Country": "Albania",
+      "Government": 45.47,
+      "Technology": 47.93,
+      "Sector": 28.36,
+      "Data_and_Infrastructure": 60.11
+    },
+    {
+      "Country": "Algeria",
+      "Government": 39.06,
+      "Technology": 31.68,
+      "Sector": 33.26,
+      "Data_and_Infrastructure": 52.24
+    },
+    {
+      "Country": "Andorra",
+      "Government": 54.44,
+      "Technology": 47.34,
+      "Sector": 41.06,
+      "Data_and_Infrastructure": 74.91
+    },
+    {
+      "Country": "Angola",
+      "Government": 26.91,
+      "Technology": 19.73,
+      "Sector": 15.87,
+      "Data_and_Infrastructure": 45.13
+    },
+    {
+      "Country": "Antigua and Barbuda",
+      "Government": 41.61,
+      "Technology": 30.68,
+      "Sector": 30.66,
+      "Data_and_Infrastructure": 63.49
+    },
+    {
+      "Country": "Argentina",
+      "Government": 56.4,
+      "Technology": 64.65,
+      "Sector": 37.09,
+      "Data_and_Infrastructure": 67.47
+    },
+    {
+      "Country": "Armenia",
+      "Government": 44.51,
+      "Technology": 37.97,
+      "Sector": 32.91,
+      "Data_and_Infrastructure": 62.66
+    },
+    {
+      "Country": "Australia",
+      "Government": 76.45,
+      "Technology": 86.18,
+      "Sector": 56.26,
+      "Data_and_Infrastructure": 86.9
+    },
+    {
+      "Country": "Austria",
+      "Government": 72.84,
+      "Technology": 78.37,
+      "Sector": 56.56,
+      "Data_and_Infrastructure": 83.57
+    },
+    {
+      "Country": "Azerbaijan",
+      "Government": 39.92,
+      "Technology": 35.56,
+      "Sector": 29.43,
+      "Data_and_Infrastructure": 54.78
+    },
+    {
+      "Country": "Bahamas",
+      "Government": 42.03,
+      "Technology": 31.49,
+      "Sector": 30.4,
+      "Data_and_Infrastructure": 64.21
+    },
+    {
+      "Country": "Bahrain",
+      "Government": 54.33,
+      "Technology": 45.62,
+      "Sector": 37.61,
+      "Data_and_Infrastructure": 79.76
+    },
+    {
+      "Country": "Bangladesh",
+      "Government": 47.12,
+      "Technology": 58.52,
+      "Sector": 26.26,
+      "Data_and_Infrastructure": 56.59
+    },
+    {
+      "Country": "Barbados",
+      "Government": 41.11,
+      "Technology": 32.12,
+      "Sector": 31.69,
+      "Data_and_Infrastructure": 59.51
+    },
+    {
+      "Country": "Belarus",
+      "Government": 39.24,
+      "Technology": 27.54,
+      "Sector": 34.57,
+      "Data_and_Infrastructure": 55.61
+    },
+    {
+      "Country": "Belgium",
+      "Government": 72.69,
+      "Technology": 81.26,
+      "Sector": 56.23,
+      "Data_and_Infrastructure": 80.57
+    },
+    {
+      "Country": "Belize",
+      "Government": 37.59,
+      "Technology": 26.76,
+      "Sector": 30.51,
+      "Data_and_Infrastructure": 55.49
+    },
+    {
+      "Country": "Benin",
+      "Government": 42.97,
+      "Technology": 59.92,
+      "Sector": 24.3,
+      "Data_and_Infrastructure": 44.68
+    },
+    {
+      "Country": "Bhutan",
+      "Government": 38.78,
+      "Technology": 34.02,
+      "Sector": 25.58,
+      "Data_and_Infrastructure": 56.73
+    },
+    {
+      "Country": "Bolivia (Plurinational State of)",
+      "Government": 33.08,
+      "Technology": 22.43,
+      "Sector": 22.92,
+      "Data_and_Infrastructure": 53.89
+    },
+    {
+      "Country": "Bosnia and Herzegovina",
+      "Government": 37.02,
+      "Technology": 26.74,
+      "Sector": 29.25,
+      "Data_and_Infrastructure": 55.06
+    },
+    {
+      "Country": "Botswana",
+      "Government": 38.16,
+      "Technology": 35.14,
+      "Sector": 30.23,
+      "Data_and_Infrastructure": 49.12
+    },
+    {
+      "Country": "Brazil",
+      "Government": 65.89,
+      "Technology": 74.51,
+      "Sector": 44.78,
+      "Data_and_Infrastructure": 78.38
+    },
+    {
+      "Country": "Brunei Darussalam",
+      "Government": 55.45,
+      "Technology": 45.85,
+      "Sector": 45.87,
+      "Data_and_Infrastructure": 74.62
+    },
+    {
+      "Country": "Bulgaria",
+      "Government": 60.64,
+      "Technology": 65.19,
+      "Sector": 37.88,
+      "Data_and_Infrastructure": 78.85
+    },
+    {
+      "Country": "Burkina Faso",
+      "Government": 29.28,
+      "Technology": 25.69,
+      "Sector": 21.22,
+      "Data_and_Infrastructure": 40.92
+    },
+    {
+      "Country": "Burundi",
+      "Government": 21.13,
+      "Technology": 16.62,
+      "Sector": 18.95,
+      "Data_and_Infrastructure": 27.84
+    },
+    {
+      "Country": "Cabo Verde",
+      "Government": 40.67,
+      "Technology": 39.58,
+      "Sector": 27.25,
+      "Data_and_Infrastructure": 55.19
+    },
+    {
+      "Country": "Cambodia",
+      "Government": 36.63,
+      "Technology": 29.18,
+      "Sector": 29.31,
+      "Data_and_Infrastructure": 51.4
+    },
+    {
+      "Country": "Cameroon",
+      "Government": 33.46,
+      "Technology": 30.1,
+      "Sector": 28.64,
+      "Data_and_Infrastructure": 41.63
+    },
+    {
+      "Country": "Canada",
+      "Government": 78.18,
+      "Technology": 85.48,
+      "Sector": 61.69,
+      "Data_and_Infrastructure": 87.35
+    },
+    {
+      "Country": "Central African Republic",
+      "Government": 20.26,
+      "Technology": 12.07,
+      "Sector": 19.95,
+      "Data_and_Infrastructure": 28.77
+    },
+    {
+      "Country": "Chad",
+      "Government": 22.66,
+      "Technology": 20.94,
+      "Sector": 18.22,
+      "Data_and_Infrastructure": 28.82
+    },
+    {
+      "Country": "Chile",
+      "Government": 63.19,
+      "Technology": 70.75,
+      "Sector": 44.11,
+      "Data_and_Infrastructure": 74.71
+    },
+    {
+      "Country": "China",
+      "Government": 72.01,
+      "Technology": 72.9,
+      "Sector": 62.95,
+      "Data_and_Infrastructure": 80.18
+    },
+    {
+      "Country": "Colombia",
+      "Government": 59.33,
+      "Technology": 71.96,
+      "Sector": 39,
+      "Data_and_Infrastructure": 67.05
+    },
+    {
+      "Country": "Comoros",
+      "Government": 26.65,
+      "Technology": 17.22,
+      "Sector": 23.75,
+      "Data_and_Infrastructure": 38.97
+    },
+    {
+      "Country": "Congo",
+      "Government": 25.12,
+      "Technology": 22.4,
+      "Sector": 22.71,
+      "Data_and_Infrastructure": 30.24
+    },
+    {
+      "Country": "Costa Rica",
+      "Government": 56.85,
+      "Technology": 68.46,
+      "Sector": 34.74,
+      "Data_and_Infrastructure": 67.35
+    },
+    {
+      "Country": "Côte d'Ivoire",
+      "Government": 34.69,
+      "Technology": 31.15,
+      "Sector": 26.1,
+      "Data_and_Infrastructure": 46.81
+    },
+    {
+      "Country": "Croatia",
+      "Government": 51.62,
+      "Technology": 40.86,
+      "Sector": 39.72,
+      "Data_and_Infrastructure": 74.28
+    },
+    {
+      "Country": "Cuba",
+      "Government": 42.43,
+      "Technology": 51.55,
+      "Sector": 26.76,
+      "Data_and_Infrastructure": 49
+    },
+    {
+      "Country": "Cyprus",
+      "Government": 61.5,
+      "Technology": 68.53,
+      "Sector": 36.18,
+      "Data_and_Infrastructure": 79.8
+    },
+    {
+      "Country": "Czechia",
+      "Government": 70.23,
+      "Technology": 76.45,
+      "Sector": 49.5,
+      "Data_and_Infrastructure": 84.74
+    },
+    {
+      "Country": "Democratic Republic of the Congo",
+      "Government": 22.1,
+      "Technology": 17.96,
+      "Sector": 15.99,
+      "Data_and_Infrastructure": 32.34
+    },
+    {
+      "Country": "Denmark",
+      "Government": 74.71,
+      "Technology": 84.07,
+      "Sector": 57.17,
+      "Data_and_Infrastructure": 82.89
+    },
+    {
+      "Country": "Djibouti",
+      "Government": 35.19,
+      "Technology": 23.13,
+      "Sector": 32.84,
+      "Data_and_Infrastructure": 49.61
+    },
+    {
+      "Country": "Dominican Republic",
+      "Government": 52.69,
+      "Technology": 69.04,
+      "Sector": 24.77,
+      "Data_and_Infrastructure": 64.27
+    },
+    {
+      "Country": "Ecuador",
+      "Government": 41.46,
+      "Technology": 34.27,
+      "Sector": 29.31,
+      "Data_and_Infrastructure": 60.79
+    },
+    {
+      "Country": "Egypt",
+      "Government": 55.63,
+      "Technology": 68.98,
+      "Sector": 42.13,
+      "Data_and_Infrastructure": 55.77
+    },
+    {
+      "Country": "El Salvador",
+      "Government": 34.09,
+      "Technology": 25.5,
+      "Sector": 26.81,
+      "Data_and_Infrastructure": 49.95
+    },
+    {
+      "Country": "Equatorial Guinea",
+      "Government": 27.09,
+      "Technology": 19.28,
+      "Sector": 25.68,
+      "Data_and_Infrastructure": 36.31
+    },
+    {
+      "Country": "Eritrea",
+      "Government": 22.2,
+      "Technology": 8.3,
+      "Sector": 23.07,
+      "Data_and_Infrastructure": 35.22
+    },
+    {
+      "Country": "Estonia",
+      "Government": 72.62,
+      "Technology": 86.71,
+      "Sector": 48.97,
+      "Data_and_Infrastructure": 82.19
+    },
+    {
+      "Country": "Eswatini",
+      "Government": 36.23,
+      "Technology": 29.11,
+      "Sector": 26.2,
+      "Data_and_Infrastructure": 53.36
+    },
+    {
+      "Country": "Ethiopia",
+      "Government": 38.34,
+      "Technology": 51.46,
+      "Sector": 21.57,
+      "Data_and_Infrastructure": 41.98
+    },
+    {
+      "Country": "Fiji",
+      "Government": 44.22,
+      "Technology": 37.02,
+      "Sector": 32.32,
+      "Data_and_Infrastructure": 63.31
+    },
+    {
+      "Country": "Finland",
+      "Government": 76.48,
+      "Technology": 84.86,
+      "Sector": 60.86,
+      "Data_and_Infrastructure": 83.73
+    },
+    {
+      "Country": "France",
+      "Government": 79.36,
+      "Technology": 85.29,
+      "Sector": 63.53,
+      "Data_and_Infrastructure": 89.25
+    },
+    {
+      "Country": "Gabon",
+      "Government": 34.15,
+      "Technology": 25.45,
+      "Sector": 27.77,
+      "Data_and_Infrastructure": 49.22
+    },
+    {
+      "Country": "Gambia (Republic of The)",
+      "Government": 26.95,
+      "Technology": 23.25,
+      "Sector": 19.67,
+      "Data_and_Infrastructure": 37.92
+    },
+    {
+      "Country": "Georgia",
+      "Government": 46.92,
+      "Technology": 43.41,
+      "Sector": 34.53,
+      "Data_and_Infrastructure": 62.81
+    },
+    {
+      "Country": "Germany",
+      "Government": 76.9,
+      "Technology": 79.24,
+      "Sector": 64.91,
+      "Data_and_Infrastructure": 86.55
+    },
+    {
+      "Country": "Ghana",
+      "Government": 43.3,
+      "Technology": 59.53,
+      "Sector": 25.35,
+      "Data_and_Infrastructure": 45.03
+    },
+    {
+      "Country": "Greece",
+      "Government": 57.7,
+      "Technology": 50.66,
+      "Sector": 46.55,
+      "Data_and_Infrastructure": 75.88
+    },
+    {
+      "Country": "Grenada",
+      "Government": 37.96,
+      "Technology": 31.88,
+      "Sector": 28.39,
+      "Data_and_Infrastructure": 53.62
+    },
+    {
+      "Country": "Guatemala",
+      "Government": 36.41,
+      "Technology": 28.95,
+      "Sector": 23.7,
+      "Data_and_Infrastructure": 56.59
+    },
+    {
+      "Country": "Guinea",
+      "Government": 30.21,
+      "Technology": 25.63,
+      "Sector": 22.24,
+      "Data_and_Infrastructure": 42.77
+    },
+    {
+      "Country": "Guinea Bissau",
+      "Government": 25.71,
+      "Technology": 14.65,
+      "Sector": 20.46,
+      "Data_and_Infrastructure": 42.01
+    },
+    {
+      "Country": "Guyana",
+      "Government": 37.23,
+      "Technology": 26.53,
+      "Sector": 27.56,
+      "Data_and_Infrastructure": 57.61
+    },
+    {
+      "Country": "Haiti",
+      "Government": 20.06,
+      "Technology": 7.52,
+      "Sector": 18.61,
+      "Data_and_Infrastructure": 34.04
+    },
+    {
+      "Country": "Honduras",
+      "Government": 29.83,
+      "Technology": 24.72,
+      "Sector": 21.77,
+      "Data_and_Infrastructure": 43.01
+    },
+    {
+      "Country": "Hungary",
+      "Government": 63.63,
+      "Technology": 74.09,
+      "Sector": 41.81,
+      "Data_and_Infrastructure": 75
+    },
+    {
+      "Country": "Iceland",
+      "Government": 69.82,
+      "Technology": 82.2,
+      "Sector": 47.16,
+      "Data_and_Infrastructure": 80.1
+    },
+    {
+      "Country": "India",
+      "Government": 62.81,
+      "Technology": 73.32,
+      "Sector": 50.34,
+      "Data_and_Infrastructure": 64.76
+    },
+    {
+      "Country": "Indonesia",
+      "Government": 65.85,
+      "Technology": 79.86,
+      "Sector": 48.06,
+      "Data_and_Infrastructure": 69.64
+    },
+    {
+      "Country": "Iran (Islamic Republic of)",
+      "Government": 43.88,
+      "Technology": 26.54,
+      "Sector": 38.82,
+      "Data_and_Infrastructure": 66.29
+    },
+    {
+      "Country": "Iraq",
+      "Government": 40.91,
+      "Technology": 32.6,
+      "Sector": 35.87,
+      "Data_and_Infrastructure": 54.25
+    },
+    {
+      "Country": "Ireland",
+      "Government": 73.18,
+      "Technology": 75.47,
+      "Sector": 58.13,
+      "Data_and_Infrastructure": 85.95
+    },
+    {
+      "Country": "Israel",
+      "Government": 74.52,
+      "Technology": 79.3,
+      "Sector": 61.53,
+      "Data_and_Infrastructure": 82.74
+    },
+    {
+      "Country": "Italy",
+      "Government": 71.22,
+      "Technology": 78.64,
+      "Sector": 53.12,
+      "Data_and_Infrastructure": 81.88
+    },
+    {
+      "Country": "Jamaica",
+      "Government": 37.79,
+      "Technology": 34.43,
+      "Sector": 28.82,
+      "Data_and_Infrastructure": 50.11
+    },
+    {
+      "Country": "Japan",
+      "Government": 75.75,
+      "Technology": 80.31,
+      "Sector": 57.96,
+      "Data_and_Infrastructure": 88.98
+    },
+    {
+      "Country": "Jordan",
+      "Government": 61.57,
+      "Technology": 74.92,
+      "Sector": 42.64,
+      "Data_and_Infrastructure": 67.14
+    },
+    {
+      "Country": "Kazakhstan",
+      "Government": 51.41,
+      "Technology": 54.75,
+      "Sector": 33.54,
+      "Data_and_Infrastructure": 65.93
+    },
+    {
+      "Country": "Kenya",
+      "Government": 43.56,
+      "Technology": 56.2,
+      "Sector": 30.98,
+      "Data_and_Infrastructure": 43.49
+    },
+    {
+      "Country": "Kiribati",
+      "Government": 34.45,
+      "Technology": 30.85,
+      "Sector": 26.96,
+      "Data_and_Infrastructure": 45.55
+    },
+    {
+      "Country": "Kuwait",
+      "Government": 51.26,
+      "Technology": 46.49,
+      "Sector": 36.93,
+      "Data_and_Infrastructure": 70.36
+    },
+    {
+      "Country": "Kyrgyzstan",
+      "Government": 36.55,
+      "Technology": 34.68,
+      "Sector": 24.49,
+      "Data_and_Infrastructure": 50.49
+    },
+    {
+      "Country": "Lao People's Democratic Republic",
+      "Government": 36.08,
+      "Technology": 28.1,
+      "Sector": 28.79,
+      "Data_and_Infrastructure": 51.36
+    },
+    {
+      "Country": "Latvia",
+      "Government": 61.87,
+      "Technology": 74.46,
+      "Sector": 35.72,
+      "Data_and_Infrastructure": 75.43
+    },
+    {
+      "Country": "Lebanon",
+      "Government": 46.67,
+      "Technology": 51.04,
+      "Sector": 40.48,
+      "Data_and_Infrastructure": 48.48
+    },
+    {
+      "Country": "Lesotho",
+      "Government": 28.21,
+      "Technology": 24.66,
+      "Sector": 21.08,
+      "Data_and_Infrastructure": 38.9
+    },
+    {
+      "Country": "Liberia",
+      "Government": 23.12,
+      "Technology": 16.58,
+      "Sector": 20.89,
+      "Data_and_Infrastructure": 31.9
+    },
+    {
+      "Country": "Libya",
+      "Government": 33.25,
+      "Technology": 16.41,
+      "Sector": 34.53,
+      "Data_and_Infrastructure": 48.8
+    },
+    {
+      "Country": "Liechtenstein",
+      "Government": 55.91,
+      "Technology": 43.7,
+      "Sector": 49.19,
+      "Data_and_Infrastructure": 74.83
+    },
+    {
+      "Country": "Lithuania",
+      "Government": 67.8,
+      "Technology": 77.63,
+      "Sector": 43.02,
+      "Data_and_Infrastructure": 82.75
+    },
+    {
+      "Country": "Luxembourg",
+      "Government": 70.63,
+      "Technology": 84.67,
+      "Sector": 43.81,
+      "Data_and_Infrastructure": 83.4
+    },
+    {
+      "Country": "Madagascar",
+      "Government": 28.8,
+      "Technology": 25.3,
+      "Sector": 21.19,
+      "Data_and_Infrastructure": 39.92
+    },
+    {
+      "Country": "Malawi",
+      "Government": 29.32,
+      "Technology": 27.85,
+      "Sector": 23.79,
+      "Data_and_Infrastructure": 36.32
+    },
+    {
+      "Country": "Malaysia",
+      "Government": 71.4,
+      "Technology": 82.47,
+      "Sector": 54.17,
+      "Data_and_Infrastructure": 77.56
+    },
+    {
+      "Country": "Maldives",
+      "Government": 31.43,
+      "Technology": 33.71,
+      "Sector": 17.22,
+      "Data_and_Infrastructure": 43.36
+    },
+    {
+      "Country": "Mali",
+      "Government": 32.27,
+      "Technology": 26,
+      "Sector": 22.44,
+      "Data_and_Infrastructure": 48.36
+    },
+    {
+      "Country": "Malta",
+      "Government": 63.64,
+      "Technology": 75.86,
+      "Sector": 39.89,
+      "Data_and_Infrastructure": 75.18
+    },
+    {
+      "Country": "Marshall Islands",
+      "Government": 37.62,
+      "Technology": 29.94,
+      "Sector": 31.65,
+      "Data_and_Infrastructure": 51.29
+    },
+    {
+      "Country": "Mauritania",
+      "Government": 41.4,
+      "Technology": 50.12,
+      "Sector": 29.1,
+      "Data_and_Infrastructure": 44.98
+    },
+    {
+      "Country": "Mauritius",
+      "Government": 53.94,
+      "Technology": 65.31,
+      "Sector": 32.71,
+      "Data_and_Infrastructure": 63.81
+    },
+    {
+      "Country": "Mexico",
+      "Government": 53.29,
+      "Technology": 43.52,
+      "Sector": 42.27,
+      "Data_and_Infrastructure": 74.07
+    },
+    {
+      "Country": "Mongolia",
+      "Government": 42.36,
+      "Technology": 36.94,
+      "Sector": 26.78,
+      "Data_and_Infrastructure": 63.36
+    },
+    {
+      "Country": "Montenegro",
+      "Government": 47.43,
+      "Technology": 39.41,
+      "Sector": 33.4,
+      "Data_and_Infrastructure": 69.48
+    },
+    {
+      "Country": "Morocco",
+      "Government": 41.78,
+      "Technology": 34.82,
+      "Sector": 36.7,
+      "Data_and_Infrastructure": 53.82
+    },
+    {
+      "Country": "Mozambique",
+      "Government": 24.22,
+      "Technology": 20.86,
+      "Sector": 18.23,
+      "Data_and_Infrastructure": 33.57
+    },
+    {
+      "Country": "Myanmar",
+      "Government": 34.26,
+      "Technology": 24.24,
+      "Sector": 33.85,
+      "Data_and_Infrastructure": 44.69
+    },
+    {
+      "Country": "Namibia",
+      "Government": 33.28,
+      "Technology": 28.56,
+      "Sector": 25.36,
+      "Data_and_Infrastructure": 45.92
+    },
+    {
+      "Country": "Nepal",
+      "Government": 33.14,
+      "Technology": 30.61,
+      "Sector": 25.44,
+      "Data_and_Infrastructure": 43.37
+    },
+    {
+      "Country": "Netherlands",
+      "Government": 77.23,
+      "Technology": 84.58,
+      "Sector": 60.12,
+      "Data_and_Infrastructure": 87
+    },
+    {
+      "Country": "New Zealand",
+      "Government": 63.98,
+      "Technology": 55.95,
+      "Sector": 49.56,
+      "Data_and_Infrastructure": 86.43
+    },
+    {
+      "Country": "Nicaragua",
+      "Government": 28.53,
+      "Technology": 20.07,
+      "Sector": 21.88,
+      "Data_and_Infrastructure": 43.64
+    },
+    {
+      "Country": "Niger",
+      "Government": 25.74,
+      "Technology": 24.22,
+      "Sector": 17.15,
+      "Data_and_Infrastructure": 35.87
+    },
+    {
+      "Country": "Nigeria",
+      "Government": 43.33,
+      "Technology": 59.88,
+      "Sector": 27.11,
+      "Data_and_Infrastructure": 42.99
+    },
+    {
+      "Country": "North Macedonia",
+      "Government": 45.12,
+      "Technology": 36.51,
+      "Sector": 32.36,
+      "Data_and_Infrastructure": 66.5
+    },
+    {
+      "Country": "Norway",
+      "Government": 76.12,
+      "Technology": 86.38,
+      "Sector": 56.28,
+      "Data_and_Infrastructure": 85.7
+    },
+    {
+      "Country": "Oman",
+      "Government": 62.91,
+      "Technology": 69.61,
+      "Sector": 41.29,
+      "Data_and_Infrastructure": 77.84
+    },
+    {
+      "Country": "Pakistan",
+      "Government": 40.47,
+      "Technology": 40.61,
+      "Sector": 36.94,
+      "Data_and_Infrastructure": 43.87
+    },
+    {
+      "Country": "Panama",
+      "Government": 44.39,
+      "Technology": 35.79,
+      "Sector": 26.97,
+      "Data_and_Infrastructure": 70.41
+    },
+    {
+      "Country": "Papua New Guinea",
+      "Government": 36.85,
+      "Technology": 32.64,
+      "Sector": 29.5,
+      "Data_and_Infrastructure": 48.4
+    },
+    {
+      "Country": "Paraguay",
+      "Government": 39.54,
+      "Technology": 36.9,
+      "Sector": 23.15,
+      "Data_and_Infrastructure": 58.56
+    },
+    {
+      "Country": "Peru",
+      "Government": 57.11,
+      "Technology": 68.6,
+      "Sector": 34.03,
+      "Data_and_Infrastructure": 68.7
+    },
+    {
+      "Country": "Philippines",
+      "Government": 58.51,
+      "Technology": 74.49,
+      "Sector": 38.58,
+      "Data_and_Infrastructure": 62.45
+    },
+    {
+      "Country": "Poland",
+      "Government": 67.51,
+      "Technology": 76.53,
+      "Sector": 45.41,
+      "Data_and_Infrastructure": 80.59
+    },
+    {
+      "Country": "Portugal",
+      "Government": 70.93,
+      "Technology": 79.47,
+      "Sector": 52.49,
+      "Data_and_Infrastructure": 80.83
+    },
+    {
+      "Country": "Qatar",
+      "Government": 68.22,
+      "Technology": 76.07,
+      "Sector": 46.9,
+      "Data_and_Infrastructure": 81.69
+    },
+    {
+      "Country": "Republic of Korea",
+      "Government": 79.98,
+      "Technology": 84.59,
+      "Sector": 62.6,
+      "Data_and_Infrastructure": 92.74
+    },
+    {
+      "Country": "Republic of Moldova",
+      "Government": 56.03,
+      "Technology": 69.38,
+      "Sector": 29.94,
+      "Data_and_Infrastructure": 68.79
+    },
+    {
+      "Country": "Romania",
+      "Government": 58.08,
+      "Technology": 69.25,
+      "Sector": 40.41,
+      "Data_and_Infrastructure": 64.58
+    },
+    {
+      "Country": "Russian Federation",
+      "Government": 64.72,
+      "Technology": 72.15,
+      "Sector": 45.38,
+      "Data_and_Infrastructure": 76.62
+    },
+    {
+      "Country": "Rwanda",
+      "Government": 51.25,
+      "Technology": 71.44,
+      "Sector": 30.3,
+      "Data_and_Infrastructure": 52.02
+    },
+    {
+      "Country": "Saint Kitts and Nevis",
+      "Government": 41.62,
+      "Technology": 30.26,
+      "Sector": 32.65,
+      "Data_and_Infrastructure": 61.94
+    },
+    {
+      "Country": "Saint Lucia",
+      "Government": 39.11,
+      "Technology": 31.1,
+      "Sector": 28.63,
+      "Data_and_Infrastructure": 57.6
+    },
+    {
+      "Country": "Saint Vincent and the Grenadines",
+      "Government": 36.65,
+      "Technology": 29.3,
+      "Sector": 28.11,
+      "Data_and_Infrastructure": 52.55
+    },
+    {
+      "Country": "Samoa",
+      "Government": 37.16,
+      "Technology": 31.75,
+      "Sector": 34.89,
+      "Data_and_Infrastructure": 49.25
+    },
+    {
+      "Country": "San Marino",
+      "Government": 51.59,
+      "Technology": 38.65,
+      "Sector": 42.14,
+      "Data_and_Infrastructure": 73.99
+    },
+    {
+      "Country": "Sao Tome and Principe",
+      "Government": 29.63,
+      "Technology": 24.82,
+      "Sector": 23.69,
+      "Data_and_Infrastructure": 40.39
+    },
+    {
+      "Country": "Saudi Arabia",
+      "Government": 72.36,
+      "Technology": 80.72,
+      "Sector": 52.92,
+      "Data_and_Infrastructure": 83.43
+    },
+    {
+      "Country": "Senegal",
+      "Government": 46.11,
+      "Technology": 62.37,
+      "Sector": 28.77,
+      "Data_and_Infrastructure": 47.18
+    },
+    {
+      "Country": "Serbia",
+      "Government": 58.49,
+      "Technology": 69.88,
+      "Sector": 38.22,
+      "Data_and_Infrastructure": 67.35
+    },
+    {
+      "Country": "Seychelles",
+      "Government": 44.77,
+      "Technology": 41.41,
+      "Sector": 36.81,
+      "Data_and_Infrastructure": 56.09
+    },
+    {
+      "Country": "Sierra Leone",
+      "Government": 25.34,
+      "Technology": 21.96,
+      "Sector": 17.72,
+      "Data_and_Infrastructure": 36.33
+    },
+    {
+      "Country": "Singapore",
+      "Government": 84.25,
+      "Technology": 90.96,
+      "Sector": 68.65,
+      "Data_and_Infrastructure": 93.14
+    },
+    {
+      "Country": "Slovakia",
+      "Government": 63.69,
+      "Technology": 68.76,
+      "Sector": 41.4,
+      "Data_and_Infrastructure": 80.91
+    },
+    {
+      "Country": "Slovenia",
+      "Government": 65.85,
+      "Technology": 77.48,
+      "Sector": 43.32,
+      "Data_and_Infrastructure": 76.76
+    },
+    {
+      "Country": "Solomon Islands",
+      "Government": 32.71,
+      "Technology": 27.69,
+      "Sector": 27.98,
+      "Data_and_Infrastructure": 42.45
+    },
+    {
+      "Country": "Somalia",
+      "Government": 25.32,
+      "Technology": 19.05,
+      "Sector": 20.36,
+      "Data_and_Infrastructure": 36.54
+    },
+    {
+      "Country": "South Africa",
+      "Government": 52.91,
+      "Technology": 54.3,
+      "Sector": 39.15,
+      "Data_and_Infrastructure": 65.28
+    },
+    {
+      "Country": "South Sudan",
+      "Government": 18.58,
+      "Technology": 11.04,
+      "Sector": 19.74,
+      "Data_and_Infrastructure": 24.96
+    },
+    {
+      "Country": "Spain",
+      "Government": 69.25,
+      "Technology": 74.58,
+      "Sector": 50.75,
+      "Data_and_Infrastructure": 82.43
+    },
+    {
+      "Country": "Sri Lanka",
+      "Government": 45.29,
+      "Technology": 55.04,
+      "Sector": 32.19,
+      "Data_and_Infrastructure": 48.65
+    },
+    {
+      "Country": "State of Palestine",
+      "Government": 37.53,
+      "Technology": 24.64,
+      "Sector": 32.75,
+      "Data_and_Infrastructure": 55.21
+    },
+    {
+      "Country": "Sudan",
+      "Government": 24.63,
+      "Technology": 13.32,
+      "Sector": 24.29,
+      "Data_and_Infrastructure": 36.28
+    },
+    {
+      "Country": "Suriname",
+      "Government": 36.87,
+      "Technology": 25.79,
+      "Sector": 27.84,
+      "Data_and_Infrastructure": 56.99
+    },
+    {
+      "Country": "Sweden",
+      "Government": 75.4,
+      "Technology": 80.6,
+      "Sector": 63.45,
+      "Data_and_Infrastructure": 82.16
+    },
+    {
+      "Country": "Switzerland",
+      "Government": 69.42,
+      "Technology": 59.06,
+      "Sector": 61.32,
+      "Data_and_Infrastructure": 87.88
+    },
+    {
+      "Country": "Syrian Arab Republic",
+      "Government": 16.95,
+      "Technology": 16.42,
+      "Sector": 18.93,
+      "Data_and_Infrastructure": 15.49
+    },
+    {
+      "Country": "Taiwan",
+      "Government": 74.58,
+      "Technology": 82.98,
+      "Sector": 56.37,
+      "Data_and_Infrastructure": 84.38
+    },
+    {
+      "Country": "Tajikistan",
+      "Government": 36.72,
+      "Technology": 51.05,
+      "Sector": 19.79,
+      "Data_and_Infrastructure": 39.31
+    },
+    {
+      "Country": "Thailand",
+      "Government": 66.17,
+      "Technology": 75.78,
+      "Sector": 44.83,
+      "Data_and_Infrastructure": 77.9
+    },
+    {
+      "Country": "Timor-Leste",
+      "Government": 33.68,
+      "Technology": 27.03,
+      "Sector": 26.7,
+      "Data_and_Infrastructure": 47.3
+    },
+    {
+      "Country": "Togo",
+      "Government": 31.32,
+      "Technology": 31.21,
+      "Sector": 20.82,
+      "Data_and_Infrastructure": 41.92
+    },
+    {
+      "Country": "Tonga",
+      "Government": 38.63,
+      "Technology": 31.75,
+      "Sector": 34.89,
+      "Data_and_Infrastructure": 49.25
+    },
+    {
+      "Country": "Trinidad and Tobago",
+      "Government": 40.14,
+      "Technology": 32.33,
+      "Sector": 31.53,
+      "Data_and_Infrastructure": 56.56
+    },
+    {
+      "Country": "Tunisia",
+      "Government": 43.68,
+      "Technology": 28.62,
+      "Sector": 41.07,
+      "Data_and_Infrastructure": 61.35
+    },
+    {
+      "Country": "Türkiye",
+      "Government": 60.63,
+      "Technology": 70.73,
+      "Sector": 45.13,
+      "Data_and_Infrastructure": 66.02
+    },
+    {
+      "Country": "Turkmenistan",
+      "Government": 32.64,
+      "Technology": 17.03,
+      "Sector": 32.92,
+      "Data_and_Infrastructure": 47.96
+    },
+    {
+      "Country": "Uganda",
+      "Government": 34.63,
+      "Technology": 35.57,
+      "Sector": 22.23,
+      "Data_and_Infrastructure": 46.1
+    },
+    {
+      "Country": "Ukraine",
+      "Government": 60.57,
+      "Technology": 73.42,
+      "Sector": 41.93,
+      "Data_and_Infrastructure": 66.37
+    },
+    {
+      "Country": "United Arab Emirates",
+      "Government": 75.66,
+      "Technology": 83.89,
+      "Sector": 59.2,
+      "Data_and_Infrastructure": 83.89
+    },
+    {
+      "Country": "United Kingdom of Great Britain and Northern Ireland",
+      "Government": 78.88,
+      "Technology": 84.47,
+      "Sector": 66.57,
+      "Data_and_Infrastructure": 85.62
+    },
+    {
+      "Country": "United Republic of Tanzania",
+      "Government": 35.08,
+      "Technology": 36.64,
+      "Sector": 20.98,
+      "Data_and_Infrastructure": 47.62
+    },
+    {
+      "Country": "United States of America",
+      "Government": 87.03,
+      "Technology": 89.26,
+      "Sector": 80.94,
+      "Data_and_Infrastructure": 90.9
+    },
+    {
+      "Country": "Uruguay",
+      "Government": 62.21,
+      "Technology": 76.39,
+      "Sector": 33.31,
+      "Data_and_Infrastructure": 76.93
+    },
+    {
+      "Country": "Uzbekistan",
+      "Government": 53.45,
+      "Technology": 64.71,
+      "Sector": 33.5,
+      "Data_and_Infrastructure": 62.14
+    },
+    {
+      "Country": "Vanuatu",
+      "Government": 39.04,
+      "Technology": 34.44,
+      "Sector": 30.85,
+      "Data_and_Infrastructure": 51.82
+    },
+    {
+      "Country": "Venezuela, Bolivarian Republic of",
+      "Government": 29.21,
+      "Technology": 15.5,
+      "Sector": 26,
+      "Data_and_Infrastructure": 46.12
+    },
+    {
+      "Country": "Viet Nam",
+      "Government": 61.42,
+      "Technology": 75.02,
+      "Sector": 43.36,
+      "Data_and_Infrastructure": 65.86
+    },
+    {
+      "Country": "Yemen",
+      "Government": 14.62,
+      "Technology": 12.9,
+      "Sector": 20.41,
+      "Data_and_Infrastructure": 10.56
+    },
+    {
+      "Country": "Zambia",
+      "Government": 41.87,
+      "Technology": 60.78,
+      "Sector": 23.22,
+      "Data_and_Infrastructure": 41.63
+    },
+    {
+      "Country": "Zimbabwe",
+      "Government": 32.59,
+      "Technology": 23.69,
+      "Sector": 27.82,
+      "Data_and_Infrastructure": 46.27
+    }
+  ]
+  
