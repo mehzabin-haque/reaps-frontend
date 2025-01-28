@@ -25,13 +25,12 @@ const navigation = [
 export default function SidebarResearcher() {
   const pathname = usePathname();
   const router = useRouter();
-  const { user, updateUser } = useUser();
+  const { user, updateUser, logout } = useUser();
   
   const handleLogout = () => {
-    // handle logout
-    updateUser(null);
-    router.push('/login');
-  }
+    logout(); // Call logout from useUser
+    router.push('/login'); // Redirect to the home page or login page
+  };
   return (
     <aside className="w-64 bg-white border-r border-gray-200 h-screen flex flex-col">
       {/* Navigation */}

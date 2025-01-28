@@ -1,18 +1,11 @@
 'use client';
+import React, { createContext, useState, ReactNode, useMemo, useEffect } from 'react';
 
-import React, {
-  createContext,
-  useState,
-  ReactNode,
-  useMemo,
-  useEffect,
-} from 'react';
-
-export interface User {
+interface User {
   id: string;
   username: string;
   email: string;
-  role: string;
+  role?: string; // Add role to User interface
 }
 
 interface UserContextType {
@@ -20,9 +13,7 @@ interface UserContextType {
   updateUser: (newUser: User | null) => void;
 }
 
-export const UserContext = createContext<UserContextType | undefined>(
-  undefined
-);
+export const UserContext = createContext<UserContextType | undefined>(undefined);
 
 interface UserProviderProps {
   children: ReactNode;
@@ -40,10 +31,8 @@ export const UserProvider: React.FC<UserProviderProps> = ({ children }) => {
 
   const updateUser = (newUser: User | null) => {
     if (newUser) {
-      // Save user data to localStorage for persistence
       localStorage.setItem('user', JSON.stringify(newUser));
     } else {
-      // Clear localStorage if user logs out or null
       localStorage.removeItem('user');
     }
     setUser(newUser);

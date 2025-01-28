@@ -19,35 +19,27 @@ import { ChartPieIcon } from "@heroicons/react/24/outline";
 import useUser from "@/hooks/useUser";
 
 
-/** Dummy data for your line chart, etc. */
-const policyTrends = [
-  { year: 2020, count: 125 },
-  { year: 2021, count: 275 },
-  { year: 2022, count: 450 },
-  { year: 2023, count: 670 },
+const COLORS = [
+  "#FF6384",
+  "#36A2EB",
+  "#FFCE56",
+  "#4BC0C0",
+  "#9966FF",
+  "#FF9F40",
+  "#C9CBCF",
+  "#FF6384",
+  "#36A2EB",
 ];
 
-const COLORS = [
-  "#C70039",
-  "#45a2c8",
-  "#5555c8",
-  "#359476",
-  "#000000",
-  "#ffc658",
-  "#ff8042",
-  "#d0ed57",
-  "#a4de6c",
-  
-];
 
 const DashboardContainer = ({ children }: any) => (
-  <div className="max-w-7xl mx-auto p-6 space-y-8 bg-white min-h-screen">
+  <div className="max-w-7xl mx-auto p-6 space-y-8 min-h-screen bg-white">
     {children}
   </div>
 );
 
 const Card = ({ title, children, isLoading, noDataMessage }: any) => (
-  <div className="bg-white rounded-lg shadow p-6">
+  <div className="bg-white rounded-lg shadow-xl p-6">
     <h2 className="text-2xl font-semibold mb-6">{title}</h2>
     {isLoading ? (
       <div className="flex justify-center items-center h-48">
@@ -87,13 +79,22 @@ export default function InteractiveDashboard() {
   const [isLoadingMatrix, setIsLoadingMatrix] = useState<boolean>(true);
   const [isLoadingPie, setIsLoadingPie] = useState<boolean>(true);
 
-  const { user } = useUser(); 
-  const userId = user?.id || "guest_user";
-  const csvPath = `/output_${userId}/semantic_similarity_matrix.csv`;
+  const { user } = useUser();
+  const userId = user?.id;
 
+  // Only run the useEffect when userId changes
   useEffect(() => {
+    if (!userId) {
+      console.log("No user ID available");
+      setIsLoadingMatrix(false);
+      setIsLoadingPie(false);
+      return;
+    }
+
+    const csvPath = `/output_${userId}/semantic_similarity_matrix.csv`;
+
     // Load "semantic_similarity_matrix.csv" from public folder
-     Papa.parse(csvPath, {
+    Papa.parse(csvPath, {
       download: true,
       header: true,
       skipEmptyLines: true,
@@ -128,7 +129,7 @@ export default function InteractiveDashboard() {
         setIsLoadingPie(false);
       },
     });
-  }, []);
+  }, [userId]); // Add userId to dependency array
 
   const processAllCsvData = (data: Record<string, any>[]) => {
     const areaCounts: Record<string, number> = {};
@@ -160,9 +161,14 @@ export default function InteractiveDashboard() {
     // Sort areas by count in descending order
     const sortedAreas = Object.entries(areaCounts).sort((a, b) => b[1] - a[1]);
 
-    const topN = 5; // Number of top categories to display
+    const topN = 5;
     const topAreas = sortedAreas.slice(0, topN);
-    const otherAreas = sortedAreas.slice(topN);
+
+    // Handle case with no data
+    if (!topAreas.length) {
+      setPieData([]);
+      return;
+    }
 
     // Convert counts to percentage
     const total = topAreas.reduce((a, b) => a + b[1], 0);
@@ -217,71 +223,73 @@ export default function InteractiveDashboard() {
       </Card>
 
       {/* AI Policy Focus Areas (Pie Chart) */}
-      <div className="bg-white rounded-lg shadow p-6">
-        <h2 className="text-2xl font-semibold mb-6">AI Policy Focus Areas</h2>
-        <div className="h-80 flex justify-center items-center">
-          {isLoadingPie ? (
-            <div className="flex justify-center items-center h-full">
-              <svg
-                className="animate-spin h-10 w-10 text-blue-600"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <circle
-                  className="opacity-25"
-                  cx="12"
-                  cy="12"
-                  r="10"
-                  stroke="currentColor"
-                  strokeWidth="4"
-                ></circle>
-                <path
-                  className="opacity-75"
-                  fill="currentColor"
-                  d="M4 12a8 8 0 018-8v8H4z"
-                ></path>
-              </svg>
-            </div>
-          ) : pieData.length > 0 ? (
-            <ResponsiveContainer width="100%" height="100%" className={"pb-8"}>
-              <PieChart>
-                <Pie
-                  data={pieData}
-                  dataKey="value"
-                  nameKey="name"
-                  cx="50%"
-                  cy="50%"
-                  outerRadius={100}
-                  fill="#8884d8"
-                  label={({ name, percent }) =>
-                    `${name}: ${(percent * 100).toFixed(0)}%`
-                  }
-                  isAnimationActive={true}
-                >
-                  {pieData.map((entry, index) => (
-                    <Cell
-                      key={`cell-${index}`}
-                      fill={COLORS[index % COLORS.length]}
-                    />
-                  ))}
-                </Pie>
-                <Tooltip
-                  formatter={(value: number) => `${value}%`}
-                  contentStyle={{
-                    backgroundColor: "#f8fafc",
-                    border: "none",
-                    borderRadius: "8px",
-                  }}
-                />
-                <Legend verticalAlign="bottom" height={36} />
-              </PieChart>
-            </ResponsiveContainer>
-          ) : (
-            <p className="text-gray-500">No data available for Pie Chart.</p>
-          )}
-        </div>
-      </div>
+       <Card>
+       {isLoadingPie ? (
+                  <div className="flex justify-center items-center h-40 ">
+                    <svg
+                      className="animate-spin h-12 w-12 text-indigo-500"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <circle
+                        className="opacity-25"
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="currentColor"
+                        strokeWidth="4"
+                      />
+                      <path
+                        className="opacity-75"
+                        fill="currentColor"
+                        d="M4 12a8 8 0 018-8v8H4z"
+                      />
+                    </svg>
+                  </div>
+                ) : pieData.length > 0 ? (
+                  <div className="flex items-center justify-center ">
+                    <ResponsiveContainer className="" width={400} height={400}>
+                      <PieChart >
+                        <Pie
+                          data={pieData}
+                          dataKey="value"
+                          nameKey="name"
+                          cx="50%"
+                          cy="50%"
+                          outerRadius={100}
+                          fill="#8884d8"
+                          
+                          isAnimationActive
+                        >
+                          {pieData.map((entry, index) => (
+                            <Cell
+                              key={`cell-${index}`}
+                              fill={COLORS[index % COLORS.length]}
+                            />
+                          ))}
+                        </Pie>
+                        <Tooltip
+                          formatter={(value: number) => `${value}%`}
+                          contentStyle={{
+                            backgroundColor: "#f8fafc",
+                            border: "none",
+                            borderRadius: "8px",
+                          }}
+                        />
+                        <Legend
+                          verticalAlign="bottom"
+                          wrapperStyle={{ fontSize: "14px" }}
+                        />
+                      </PieChart>
+                    </ResponsiveContainer>
+                  </div>
+                ) : (
+                  <p className="text-center text-gray-500">
+                    No data available for Pie Chart.
+                  </p>
+                )}
+       </Card>
     </DashboardContainer>
   );
 }

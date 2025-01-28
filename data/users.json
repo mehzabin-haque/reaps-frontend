@@ -14,5 +14,13 @@
     "password": "$2a$10$szohkfu13khU88rXKD/gqOZ4luoP8iM3Drni9ON7OoBE6mYMucpLK",
     "role": "researcher",
     "createdAt": "2025-01-26T12:38:12.779Z"
+  },
+  {
+    "id": "1738085157007",
+    "username": "mehu-r-2",
+    "email": "b@c.c",
+    "password": "$2a$10$5NPo5zPiOSiCD9fYuIqWHO/ZGA/6UVW1qOFpXtjgKjpyAKfQ/qRbO",
+    "role": "policymaker",
+    "createdAt": "2025-01-28T17:25:57.007Z"
   }
 ]

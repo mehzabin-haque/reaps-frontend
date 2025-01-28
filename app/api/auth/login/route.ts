@@ -1,5 +1,3 @@
-// app/api/auth/login/route.ts
-
 import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
@@ -7,7 +5,7 @@ import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 
 const USERS_FILE = path.join(process.cwd(), 'data', 'users.json');
-const JWT_SECRET = process.env.JWT_SECRET || 'mehzabin'; // Replace with your secret
+const JWT_SECRET = process.env.JWT_SECRET || 'mehzabin';
 
 export async function POST(request: Request) {
   try {
@@ -17,7 +15,6 @@ export async function POST(request: Request) {
       return NextResponse.json({ message: 'Email and password are required' }, { status: 400 });
     }
 
-    // Check if users.json exists
     if (!fs.existsSync(USERS_FILE)) {
       return NextResponse.json({ message: 'No users found. Please sign up first.' }, { status: 404 });
     }
@@ -35,9 +32,8 @@ export async function POST(request: Request) {
       return NextResponse.json({ message: 'Invalid email or password' }, { status: 401 });
     }
 
-    // Create JWT token
     const token = jwt.sign(
-      { id: user.id, email: user.email, role: user.role },
+      { id: user.id, email: user.email, role: user.role || 'user' },
       JWT_SECRET,
       { expiresIn: '1h' }
     );
@@ -45,7 +41,12 @@ export async function POST(request: Request) {
     return NextResponse.json({
       message: 'Login successful',
       token,
-      user: { id: user.id, username: user.username, email: user.email, role: user.role },
+      user: {
+        id: user.id,
+        username: user.username,
+        email: user.email,
+        role: user.role || 'user'
+      }
     }, { status: 200 });
   } catch (error) {
     console.error('Login Error:', error);

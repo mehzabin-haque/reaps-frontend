@@ -1,182 +1,184 @@
-// app/interactive/page.tsx
-'use client';
-import { useState } from "react";
+"use client";
+
+import { useEffect, useState } from "react";
+import Papa from "papaparse";
 import {
-  BarChart,
-  Bar,
-  LineChart,
-  Line,
+  ResponsiveContainer,
   PieChart,
   Pie,
-  Cell,
-  ResponsiveContainer,
-  CartesianGrid,
-  XAxis,
-  YAxis,
   Tooltip,
+  Cell,
   Legend,
 } from "recharts";
-import { HomeIcon, InboxIcon,FilmIcon, Cog8ToothIcon, ChartPieIcon } from "@heroicons/react/24/outline";
+import useUser from "@/hooks/useUser";
 
-// Sample data for charts
-const policyAnalysis = [
-  { country: "USA", score: 85 },
-  { country: "Canada", score: 80 },
-  { country: "UK", score: 78 },
-  { country: "Germany", score: 82 },
-  { country: "Japan", score: 76 },
-];
-
-const policyTrends = [
-  { year: 2020, count: 125 },
-  { year: 2021, count: 275 },
-  { year: 2022, count: 450 },
-  { year: 2023, count: 670 },
-];
-
-const focusAreas = [
-  { area: "Ethics", value: 25 },
-  { area: "Governance", value: 30 },
-  { area: "Innovation", value: 20 },
-  { area: "Economic Impact", value: 25 },
+const COLORS = [
+  "#FF6384",
+  "#36A2EB",
+  "#FFCE56",
+  "#4BC0C0",
+  "#9966FF",
+  "#FF9F40",
+  "#C9CBCF",
+  "#FF6384",
+  "#36A2EB",
 ];
 
 export default function InteractiveDashboard() {
-  const [selectedCountry, setSelectedCountry] = useState("all");
-  const colors = ["#667eea", "#818cf8", "#9333ea", "#a855f4", "#ec4899"];
+  const [pieData, setPieData] = useState<{ name: string; value: number }[]>([]);
+  const [isLoadingPie, setIsLoadingPie] = useState<boolean>(true);
+
+  const { user } = useUser();
+  const userId = user?.id;
+
+  useEffect(() => {
+    if (!userId) {
+      console.log("No user ID available");
+      setIsLoadingPie(false);
+      return;
+    }
+
+    // Load "all.csv" from public folder
+    Papa.parse("/all.csv", {
+      download: true,
+      header: true,
+      skipEmptyLines: true,
+      complete: (results) => {
+        const data = results.data as Record<string, any>[];
+        processAllCsvData(data);
+        setIsLoadingPie(false);
+      },
+      error: (err) => {
+        console.error("Error loading all.csv:", err);
+        setIsLoadingPie(false);
+      },
+    });
+  }, [userId]);
+
+  const processAllCsvData = (data: Record<string, any>[]) => {
+    const areaCounts: Record<string, number> = {};
+
+    data.forEach((row) => {
+      const policyAreas = row["AI Policy Area(s)"];
+      const otherPolicyAreas = row["Other AI Policy Area(s)"];
+
+      // Combine both columns
+      const combinedAreas = [policyAreas, otherPolicyAreas]
+        .filter(Boolean)
+        .join(",")
+        .split(",")
+        .map((area) => area.trim().toLowerCase())
+        .filter(Boolean);
+
+      combinedAreas.forEach((area) => {
+        // Capitalize first letter
+        const formattedArea =
+          area.charAt(0).toUpperCase() + area.slice(1).toLowerCase();
+
+        if (areaCounts[formattedArea]) {
+          areaCounts[formattedArea] += 1;
+        } else {
+          areaCounts[formattedArea] = 1;
+        }
+      });
+    });
+
+    // Sort areas by count in descending order
+    const sortedAreas = Object.entries(areaCounts).sort((a, b) => b[1] - a[1]);
+
+    // Pick the top 5
+    const topN = 5;
+    const topAreas = sortedAreas.slice(0, topN);
+
+    if (!topAreas.length) {
+      setPieData([]);
+      return;
+    }
+
+    // Convert counts to percentages
+    const total = topAreas.reduce((acc, [, count]) => acc + count, 0);
+    const pieChartData = topAreas.map(([name, count]) => ({
+      name,
+      value: parseFloat(((count / total) * 100).toFixed(2)),
+    }));
+
+    setPieData(pieChartData);
+  };
 
   return (
-    <div className="flex flex-col py-8">
-      
-      {/* Dashboard sections */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {/* Analysis by Country (Bar Chart) */}
-        <div className="bg-white rounded-lg shadow p-6">
-          <div className="flex justify-between items-center mb-4">
-            <h2 className="text-lg font-semibold">Analysis by Country</h2>
-            <button className="text-blue-600 hover:text-blue-800 flex items-center">
-              <Cog8ToothIcon className="mr-2 h-4 w-4" />
-              Customize
-            </button>
-          </div>
-          <div className="h-80">
-            <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={policyAnalysis}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
-                <XAxis
-                  dataKey="country"
-                  stroke="#667eea"
-                  tick={{ fill: "#667eea" }}
-                  axisLine={{ stroke: "#667eea" }}
-                />
-                <YAxis
-                  stroke="#667eea"
-                  tick={{ fill: "#667eea" }}
-                  axisLine={{ stroke: "#667eea" }}
-                />
-                <Tooltip
-                  contentStyle={{ backgroundColor: "#f8fafc", border: "none", borderRadius: "8px" }}
-                />
-                <Legend />
-                <Bar
-                  dataKey="score"
-                  fill="#667eea"
-                  radius={[4, 4, 0, 0]}
-                  label={(props) => {
-                    const { x, y, width, value } = props;
-                    return (
-                      <text
-                        x={x + width / 2}
-                        y={y - 5}
-                        fill="#667eea"
-                        textAnchor="middle"
-                      >
-                        {value}%
-                      </text>
-                    );
-                  }}
-                />
-              </BarChart>
-            </ResponsiveContainer>
-          </div>
-        </div>
+    <div className="w-full flex justify-center p-8 bg-blue-50">
+      {/* Card Container */}
+      <div className="w-full max-w-md bg-white rounded-xl shadow-lg overflow-hidden">
+        <div className="p-6">
+          <h2 className="text-2xl font-semibold text-gray-800 text-center mb-4 ">
+            AI Policy Focus Areas
+          </h2>
 
-        {/* Policy Trends Over Time (Line Chart) */}
-        <div className="bg-white rounded-lg shadow p-6">
-          <div className="flex justify-between items-center mb-4">
-            <h2 className="text-lg font-semibold">Policy Trends Over Time</h2>
-            <button className="text-blue-600 hover:text-blue-800 flex items-center">
-              <ChartPieIcon className="mr-2 h-4 w-4" />
-              View Data
-            </button>
-          </div>
-          <div className="h-80">
-            <ResponsiveContainer width="100%" height="100%">
-              <LineChart data={policyTrends}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
-                <XAxis
-                  dataKey="year"
-                  stroke="#667eea"
-                  tick={{ fill: "#667eea" }}
-                  axisLine={{ stroke: "#667eea" }}
+          {isLoadingPie ? (
+            <div className="flex justify-center items-center h-40 ">
+              <svg
+                className="animate-spin h-12 w-12 text-indigo-500"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  className="opacity-25"
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="currentColor"
+                  strokeWidth="4"
                 />
-                <YAxis
-                  stroke="#667eea"
-                  tick={{ fill: "#667eea" }}
-                  axisLine={{ stroke: "#667eea" }}
+                <path
+                  className="opacity-75"
+                  fill="currentColor"
+                  d="M4 12a8 8 0 018-8v8H4z"
                 />
-                <Tooltip
-                  contentStyle={{ backgroundColor: "#f8fafc", border: "none", borderRadius: "8px" }}
-                />
-                <Legend />
-                <Line
-                  type="monotone"
-                  dataKey="count"
-                  stroke="#667eea"
-                  strokeWidth={2}
-                  dot={{ fill: "#667eea", strokeWidth: 2 }}
-                  activeDot={{ r: 6 }}
-                />
-              </LineChart>
-            </ResponsiveContainer>
-          </div>
-        </div>
-
-        {/* Focus Areas (Pie Chart) */}
-        <div className="bg-white rounded-lg shadow p-6">
-          <h2 className="text-lg font-semibold mb-4">Focus Areas</h2>
-          <div className="h-80">
-            <ResponsiveContainer width="100%" height="100%">
-              <PieChart>
-                <Pie
-                  data={focusAreas}
-                  dataKey="value"
-                  nameKey="area"
-                  cx="50%"
-                  cy="50%"
-                  outerRadius={80}
-                  fill="#fff"
-                  label
-                  stroke="#667eea"
-                >
-                  {focusAreas.map((entry, index) => (
-                    <Cell
-                      key={`cell-${index}`}
-                      fill={colors[index % colors.length]}
-                    />
-                  ))}
-                </Pie>
-                <Tooltip
-                  contentStyle={{
-                    backgroundColor: "#f8fafc",
-                    border: "none",
-                    borderRadius: "8px",
-                  }}
-                />
-                <Legend />
-              </PieChart>
-            </ResponsiveContainer>
-          </div>
+              </svg>
+            </div>
+          ) : pieData.length > 0 ? (
+            <div className="flex items-center justify-center ">
+              <ResponsiveContainer className="" width={400} height={400}>
+                <PieChart >
+                  <Pie
+                    data={pieData}
+                    dataKey="value"
+                    nameKey="name"
+                    cx="50%"
+                    cy="50%"
+                    outerRadius={100}
+                    fill="#8884d8"
+                    
+                    isAnimationActive
+                  >
+                    {pieData.map((entry, index) => (
+                      <Cell
+                        key={`cell-${index}`}
+                        fill={COLORS[index % COLORS.length]}
+                      />
+                    ))}
+                  </Pie>
+                  <Tooltip
+                    formatter={(value: number) => `${value}%`}
+                    contentStyle={{
+                      backgroundColor: "#f8fafc",
+                      border: "none",
+                      borderRadius: "8px",
+                    }}
+                  />
+                  <Legend
+                    verticalAlign="bottom"
+                    wrapperStyle={{ fontSize: "14px" }}
+                  />
+                </PieChart>
+              </ResponsiveContainer>
+            </div>
+          ) : (
+            <p className="text-center text-gray-500">
+              No data available for Pie Chart.
+            </p>
+          )}
         </div>
       </div>
     </div>

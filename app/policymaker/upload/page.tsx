@@ -6,12 +6,13 @@ import { useDropzone } from "react-dropzone";
 import axios from "axios";
 import { cn } from "../../../lib/utils/classname";
 import useUser from "@/hooks/useUser";
+import { useRouter } from "next/navigation";
 
 export default function UploadDocument() {
   const [error, setError] = useState<string | null>(null);
   const [isUploading, setIsUploading] = useState(false);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
-
+  const router = useRouter(); 
   const { user } = useUser(); 
   const userId = user?.id || "guest_user"; // fallback if user is not logged in
 
@@ -64,6 +65,8 @@ export default function UploadDocument() {
       });
 
       alert("File uploaded and processed successfully!");
+      router.push("/policymaker/reports");
+      
       setSelectedFile(null);
     } catch (err) {
       console.error(err);

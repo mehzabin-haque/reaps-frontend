@@ -1,20 +1,25 @@
-// app/login/page.tsx
-
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import useUser from '@/hooks/useUser';
-// import { useUser } from '../../components/context/UserContext';
-
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const [credentials, setCredentials] = useState({ username: '', password: '' });
-  const { user, updateUser } = useUser();
+  const { user, updateUser, logout } = useUser();
   const router = useRouter();
-  
+
+  useEffect(() => {
+    // Only redirect if user is truthy AND you are sure the context is ready
+    if (user) {
+      if (user.role === 'researcher') {
+        router.push('/researcher');
+      } else if (user.role === 'policymaker') {
+        router.push('/policymaker');
+      }
+    }
+  }, [user, router]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -23,37 +28,33 @@ export default function LoginPage() {
       const response = await fetch('/api/auth/login', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email, password })
+        body: JSON.stringify({ email, password }),
       });
 
       const data = await response.json();
-
       if (!response.ok) {
         setError(data.message || 'Error logging in. Please try again.');
         return;
       }
 
-      // Store JWT token securely (consider using HttpOnly cookies for better security)
-      // localStorage.setItem('token', data.token);
-      // localStorage.setItem('currentUser', JSON.stringify(data.user));
-      console.log(data);
-      updateUser(data.user);
-
-      setError('');
-
-      // Redirect based on role
-      if (data.user.role === 'policymaker') {
-        router.push('/policymaker');
-      } else {
-        router.push('/researcher');
+      if (data.token && data.user) {
+        localStorage.setItem('jwtToken', data.token);
+        localStorage.setItem('user', JSON.stringify(data.user));
+        updateUser(data.user);
+        if (data.user.role === 'researcher') {
+          router.push('/researcher');
+        } else if (data.user.role === 'policymaker') {
+          router.push('/policymaker');
+        }
       }
     } catch (error) {
-      console.error('Login Frontend Error:', error);
+      console.error('Login Error:', error);
       setError('Error logging in. Please try again.');
     }
   };
+
 
   return (
     <div className="min-h-screen bg-gray-100 text-gray-900 flex justify-center">
