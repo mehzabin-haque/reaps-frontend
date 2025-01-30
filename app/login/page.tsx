@@ -57,8 +57,8 @@ export default function LoginPage() {
 
 
   return (
-    <div className="min-h-screen bg-gray-100 text-gray-900 flex justify-center">
-      <div className="max-w-screen-xl m-0 sm:m-10 bg-white shadow sm:rounded-lg flex justify-center flex-1">
+    <div className="min-h-screen bg-gray-50 text-gray-900 flex justify-center">
+      <div className="max-w-screen-xl m-0 sm:m-10 bg-white shadow-xl rounded-lg flex justify-center flex-1">
         <div className="md:w-1/2 xl:w-5/12 p-6 sm:p-12">
           <div className="text-center mb-10 ">
             {/* Optional: Add logo or header */}
@@ -109,7 +109,15 @@ export default function LoginPage() {
                 </button>
 
                 <div className="text-center mt-6">
-                  <p className="text-gray-600">Forgot password?{' '}</p>
+                  {/* <p className="text-gray-600">Forgot password?
+                  <button
+                      type="button"
+                      onClick={() => router.push('/forgot_pass')}
+                      className="text-[#2563eb] hover:text-[#1d4ed8] font-semibold ml-2"
+                    >
+                      Reset here
+                    </button>
+                  </p> */}
                   <button
                     type="button"
                     onClick={() => router.push('/signup')}

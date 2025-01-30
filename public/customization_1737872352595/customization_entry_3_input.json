@@ -1,0 +1,15 @@
+{
+  "userId": "1737872352595",
+  "updateFrequency": "quarterly",
+  "ethics": true,
+  "governance": false,
+  "innovation": true,
+  "socioEconomicInfos": [
+    {
+      "id": "aa1b8622-cdf1-4b7b-a225-f2c584d48785",
+      "gdpRange": 7.5,
+      "population": 100000,
+      "incomeType": "Mid"
+    }
+  ]
+}

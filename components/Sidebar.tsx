@@ -19,7 +19,7 @@ const navigation = [
   { name: "Dashboard Home", href: "/policymaker", icon: DocumentTextIcon },
   { name: "Upload Policy Document", href: "/policymaker/upload", icon: CloudArrowUpIcon },
   { name: "Analysis Reports", href: "/policymaker/reports", icon: AcademicCapIcon },
-  { name: "Notifications", href: "/policymaker/notification", icon: BellIcon },
+  { name: "New Policies", href: "/policymaker/notification", icon: BellIcon },
   { name: "Customization Settings", href: "/policymaker/settings", icon: Cog8ToothIcon },
   { name: "AI Readiness Scorecard", href: "/policymaker/scorecard", icon: ArrowPathIcon },
   

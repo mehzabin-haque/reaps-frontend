@@ -5,7 +5,8 @@
     "email": "m@m.com",
     "password": "$2a$10$fKwXAXkXujd2O3iaEk0GJenHb/dl5PROgy9pxPv19CNamaoeGncdu",
     "role": "policymaker",
-    "createdAt": "2025-01-26T06:19:12.595Z"
+    "createdAt": "2025-01-26T06:19:12.595Z",
+    "resetToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1AbS5jb20iLCJpYXQiOjE3MzgxNTUyOTQsImV4cCI6MTczODE1NjE5NH0.nSBz2qolzAA5jBj8kCzMirDbXbeqeG_NcaoFQ6N6CBs"
   },
   {
     "id": "1737895092779",

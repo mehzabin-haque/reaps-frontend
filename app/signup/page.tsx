@@ -7,7 +7,7 @@ export default function SignUpPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [username, setUsername] = useState('');
-  const [userType, setUserType] = useState('researcher');
+  const [userType, setUserType] = useState('');
   const [error, setError] = useState('');
   const router = useRouter();
 
@@ -82,6 +82,7 @@ export default function SignUpPage() {
                 className="w-full px-6 py-4 rounded-xl border border-gray-300 focus:outline-none focus:border-[#2563eb] transition-all duration-300 bg-gray-50 font-medium"
                 required
               >
+                <option value="">Specify Role</option>
                 <option value="researcher">Researcher</option>
                 <option value="policymaker">Policy Maker</option>
               </select>

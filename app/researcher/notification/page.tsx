@@ -7,6 +7,16 @@ import {
 } from "@heroicons/react/24/outline";
 import { cn } from "../../../lib/utils/classname";
 import useUser from "@/hooks/useUser";
+import {
+  CartesianGrid,
+  Legend,
+  Line,
+  LineChart,
+  ResponsiveContainer,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from "recharts";
 
 interface Publication {
   id: string;
